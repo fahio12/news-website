@@ -7,6 +7,7 @@ const API_KEY = process.env.NEWS_API_KEY
 async function getNews(){
   response = await fetch(`${API_URL}${API_KEY}`)
   json = await response.json()
+  json = json.articles
   return json
 }
 module.exports = getNews
